@@ -7,8 +7,13 @@ public class User {
     private static String char2 = ".";
 
     public User(String name, String email) {
+        validateUserParameters(name, email);
         this.name = name;
         this.email = email;
+    }
+
+    public User() {
+
     }
 
     public String getName() {

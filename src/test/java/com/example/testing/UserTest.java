@@ -11,8 +11,8 @@ class UserTest {
 
     @BeforeAll
     public static void createUsers () {
-        user1 = new User("Ivan", "affvxayy@yandex.ru");
-        user2 = new User ("","");
+        user1 = new User("test", "test@yandex.ru");
+        user2 = new User ();
     }
 
     @Test
@@ -21,12 +21,12 @@ class UserTest {
     }
     @Test
     void userWithoutParameters () {
-        assertTrue(user2.getName()== null && user2.getEmail() == null && user2.getName().isEmpty() && user2.getEmail().isEmpty());
+        assertTrue(user2.getName()== null && user2.getEmail() == null);
     }
 
     @Test
-    public void testNotValidUserParametersThrowException () {
-        assertThrows(IllegalArgumentException.class, ()-> new User ("Kate", "hjgjg@gmail.com"));
+    void testNotValidUserParametersThrowException () {
+        assertThrows(IllegalArgumentException.class, ()-> new User ("test", "testtest.ru"));
     }
 
     @Test
